@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Interaktif</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:35px 15px;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#fff7fa,#fcecf2);
+    color:#5f4b52;
+}
+
+.container{
+    max-width:560px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(190,100,130,.15);
+    border:1px solid #f2d9e1;
+    text-align:center;
+}
+
+.avatar{
+    width:85px;
+    height:85px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(135deg,#e9a4b9,#d97898);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    font-weight:bold;
+}
+
+h1{
+    margin:15px 0 5px;
+    color:#704957;
+    font-size:24px;
+}
+
+.jabatan{
+    color:#b86f85;
+    margin:5px;
+}
+
+.info{
+    line-height:1.8;
+    font-size:14px;
+}
+
+h3{
+    color:#8d596b;
+    margin-bottom:8px;
+}
+
+.skill{
+    display:inline-block;
+    padding:7px 12px;
+    margin:4px 2px;
+    background:#f9e5eb;
+    color:#a45f73;
+    border:1px solid #f0ccd8;
+    border-radius:18px;
+    font-size:13px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.skill:hover{
+    background:#f2cbd7;
+    transform:translateY(-3px);
+}
+
+.hint{
+    font-size:12px;
+    color:#a99a9f;
+}
+
+.row{
+    display:flex;
+    gap:8px;
+    margin-top:10px;
+}
+
+button{
+    flex:1;
+    padding:10px;
+    border:0;
+    border-radius:12px;
+    background:#d98ca5;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#c97894;
+    transform:translateY(-2px);
+}
+
+.outline{
+    background:white;
+    color:#bd7189;
+    border:1px solid #d9a1b2;
+}
+
+.outline:hover{
+    background:#fff3f6;
+}
+
+.box{
+    display:none;
+    margin-top:15px;
+    padding:18px;
+    background:#fff6f8;
+    border:1px solid #f1d5df;
+    border-radius:16px;
+    text-align:left;
+}
+
+label{
+    display:block;
+    margin:9px 0 5px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+input,textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #e6ccd5;
+    border-radius:9px;
+    outline:none;
+}
+
+textarea{
+    height:85px;
+    resize:none;
+}
+
+.error{
+    display:none;
+    color:#c66d82;
+    font-size:12px;
+    margin:4px 0;
+}
+
+.success{
+    display:none;
+    margin-top:8px;
+    padding:10px;
+    background:#f8e8ed;
+    color:#8b5b69;
+    border-radius:9px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+    <!-- PROFIL -->
+    <div class="avatar">KM</div>
+
+    <h1 id="namaProfil">
+        Khalindra Maulita
+    </h1>
+
+    <p class="jabatan" id="jabatanProfil">
+        Mahasiswi Sistem Informasi
+    </p>
+
+    <div class="info">
+        📍 Pontianak, Indonesia<br>
+        📧 khalindra@example.com
+    </div>
+
+
+    <h3>Skill</h3>
+
+    <div id="skills">
+
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">jQuery</span>
+
+    </div>
+
+    <p class="hint">
+        Arahkan kursor ke skill untuk melihat efek
+    </p>
+
+
+    <div class="row">
+
+        <button id="gantiNama">
+            Ganti Nama
+        </button>
+
+        <button id="tambahSkill">
+            Tambah Skill
+        </button>
+
+        <button id="reset" class="outline">
+            Reset
+        </button>
+
+    </div>
+
+
+    <div class="row">
+
+        <button id="btnProfil">
+            Ubah Profil
+        </button>
+
+        <button id="btnPesan" class="outline">
+            Tinggalkan Pesan
+        </button>
+
+    </div>
+
+
+    <div id="editBox" class="box">
+
+        <label>Nama Baru</label>
+
+        <input
+            type="text"
+            id="namaBaru"
+            placeholder="Masukkan nama baru"
+        >
+
+        <label>Jabatan Baru</label>
+
+        <input
+            type="text"
+            id="jabatanBaru"
+            placeholder="Masukkan jabatan baru"
+        >
+
+        <button
+            id="simpanProfil"
+            style="width:100%;margin-top:10px;"
+        >
+            Simpan Perubahan
+        </button>
+
+    </div>
+
+
+    <div id="messageBox" class="box">
+
+        <form id="formPesan">
+
+            <label>Nama</label>
+
+            <input
+                type="text"
+                id="namaPesan"
+                placeholder="Masukkan nama"
+            >
+
+            <p class="error" id="errorNama">
+                Nama minimal 3 karakter!
+            </p>
+
+
+            <label>Email</label>
+
+            <input
+                type="text"
+                id="email"
+                placeholder="contoh@email.com"
+            >
+
+            <p class="error" id="errorEmail">
+                Email tidak valid!
+            </p>
+
+
+            <label>Pesan</label>
+
+            <textarea
+                id="isiPesan"
+                placeholder="Tulis pesan minimal 10 karakter"
+            ></textarea>
+
+            <p class="error" id="errorPesan">
+                Pesan minimal 10 karakter!
+            </p>
+
+
+            <button
+                type="submit"
+                style="width:100%;"
+            >
+                Kirim Pesan
+            </button>
+
+
+            <div id="success" class="success">
+                ✓ Pesan berhasil dikirim!
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+
+
+    $("#gantiNama").click(function(){
+
+        let nama=prompt("Masukkan nama baru:");
+
+        if(nama && nama.length>=3){
+
+            $("#namaProfil")
+                .fadeOut(300,function(){
+
+                    $(this)
+                        .text(nama)
+                        .fadeIn(500);
+
+                });
+
+        }
+        else if(nama){
+
+            alert("Nama minimal 3 karakter!");
+
+        }
+
+    });
+
+
+    $("#tambahSkill").click(function(){
+
+        let skill=prompt("Masukkan skill baru:");
+
+        if(skill){
+
+            $("<span>")
+                .addClass("skill")
+                .text(skill)
+                .hide()
+                .appendTo("#skills")
+                .fadeIn(500);
+
+        }
+
+    });
+
+    $("#reset").click(function(){
+
+        $("#namaProfil")
+            .text("Khalindra Maulita");
+
+        $("#jabatanProfil")
+            .text("Mahasiswi Sistem Informasi");
+
+        $("#skills").html(`
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">jQuery</span>
+        `);
+
+    });
+
+    $("#btnProfil").click(function(){
+
+        $("#editBox").slideToggle(500);
+
+    });
+
+
+    $("#simpanProfil").click(function(){
+
+        let nama=$("#namaBaru").val().trim();
+
+        let jabatan=$("#jabatanBaru")
+            .val().trim();
+
+
+        if(nama.length<3){
+
+            alert("Nama minimal 3 karakter!");
+            return;
+
+        }
+
+        if(jabatan.length<3){
+
+            alert("Jabatan harus diisi!");
+            return;
+
+        }
+
+
+        $("#namaProfil")
+            .fadeOut(300,function(){
+
+                $(this)
+                    .text(nama)
+                    .fadeIn(500);
+
+            });
+
+
+        $("#jabatanProfil")
+            .fadeOut(300,function(){
+
+                $(this)
+                    .text(jabatan)
+                    .fadeIn(500);
+
+            });
+
+    });
+
+
+    $("#btnPesan").click(function(){
+
+        $("#messageBox").slideToggle(500);
+
+    });
+
+
+    $("#formPesan").submit(function(e){
+
+        e.preventDefault();
+
+
+        let nama=$("#namaPesan")
+            .val().trim();
+
+        let email=$("#email")
+            .val().trim();
+
+        let pesan=$("#isiPesan")
+            .val().trim();
+
+        let valid=true;
+
+        if(nama.length<3){
+
+            $("#errorNama").slideDown();
+
+            valid=false;
+
+        }else{
+
+            $("#errorNama").slideUp();
+
+        }
+
+
+        let pola=
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if(!pola.test(email)){
+
+            $("#errorEmail").slideDown();
+
+            valid=false;
+
+        }else{
+
+            $("#errorEmail").slideUp();
+
+        }
+
+        if(pesan.length<10){
+
+            $("#errorPesan").slideDown();
+
+            valid=false;
+
+        }else{
+
+            $("#errorPesan").slideUp();
+
+        }
+
+        if(valid){
+
+            $("#success")
+                .fadeIn()
+                .delay(2000)
+                .fadeOut();
+
+            $("#formPesan")[0].reset();
+
+        }
+
+    });
+
+    $(".skill").hover(
+
+        function(){
+
+            $(this).css({
+                "background":"#f2cbd7",
+                "transform":"translateY(-3px)"
+            });
+
+        },
+
+        function(){
+
+            $(this).css({
+                "background":"#f9e5eb",
+                "transform":"translateY(0)"
+            });
+
+        }
+
+    );
+
+});
+
+</script>
+
+</body>
+</html>
