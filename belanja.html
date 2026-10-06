@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profil & Belanja</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+ margin:0;padding:25px 15px;font-family:Arial;
+ background:linear-gradient(135deg,#fff7fa,#fce8ef);
+ color:#604b54
+}
+
+.container{max-width:650px;margin:auto}
+
+.nav,.card{
+ background:white;border:1px solid #f2d9e1;
+ border-radius:22px;box-shadow:0 8px 25px #be64821f
+}
+
+.nav{text-align:center;padding:12px;margin-bottom:20px}
+.nav button{width:45%}
+
+button{
+ padding:11px 15px;border:0;border-radius:12px;
+ background:#d98ca5;color:white;font-weight:bold;
+ cursor:pointer
+}
+
+button:hover{background:#c97894}
+
+.outline{
+ background:white;color:#bd7189;
+ border:1px solid #d9a1b2
+}
+
+.row{display:flex;gap:8px;margin-top:10px}
+.row button{flex:1}
+
+.card{padding:28px;text-align:center}
+
+.avatar{
+ width:90px;height:90px;margin:auto;border-radius:50%;
+ background:linear-gradient(135deg,#e7a0b7,#d97898);
+ color:white;display:flex;align-items:center;
+ justify-content:center;font-size:28px;font-weight:bold
+}
+
+h1{color:#704957;margin:15px 0 5px}
+.jabatan{color:#b76d84}
+.info{line-height:1.8;font-size:14px}
+
+.skill{
+ display:inline-block;padding:8px 13px;margin:4px;
+ background:#f9e3e9;color:#a45d72;
+ border-radius:20px;transition:.3s
+}
+
+.skill:hover{
+ background:#efc5d2;transform:translateY(-3px)
+}
+
+.box,.keranjang,.form-box,.riwayat{
+ margin-top:15px;padding:18px;background:#fff5f8;
+ border:1px solid #f1d5df;border-radius:16px;text-align:left
+}
+
+.box{display:none}
+
+label{
+ display:block;margin:10px 0 5px;
+ font-size:13px;font-weight:bold
+}
+
+input,textarea{
+ width:100%;padding:10px;
+ border:1px solid #e5cbd4;border-radius:9px
+}
+
+textarea{height:75px;resize:none}
+
+#belanja{display:none}
+
+.produk{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:15px;margin-top:20px
+}
+
+.item{
+ padding:18px;background:#fff7fa;
+ border:1px solid #f1d5df;border-radius:18px
+}
+
+.gambar{font-size:38px}
+.harga,.total{color:#bd7189}
+
+.cart-item{
+ display:flex;justify-content:space-between;
+ padding:9px 0;border-bottom:1px solid #f0dce3
+}
+
+.cart-item button{padding:4px 8px}
+
+.error{
+ display:none;color:#c66d82;font-size:12px
+}
+
+#berhasil{
+ display:none;margin-top:15px;padding:12px;
+ background:#f8e8ed;color:#8b5b69;border-radius:10px
+}
+
+@media(max-width:500px){
+ .produk{grid-template-columns:1fr}
+ .row{flex-direction:column}
+ .nav button{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="nav">
+ <button id="btnProfil">👤 Profil</button>
+ <button id="btnBelanja">🛍️ Belanja</button>
+</div>
+
+
+<div id="profil">
+<div class="card">
+
+ <div class="avatar">KM</div>
+
+ <h1 id="namaProfil">Khalindra Maulita</h1>
+
+ <p class="jabatan" id="jabatanProfil">
+  Mahasiswi Sistem Informasi
+ </p>
+
+ <div class="info">
+  📍 Pontianak, Indonesia<br>
+  📧 khalindra@example.com
+ </div>
+
+ <h3>Skill</h3>
+
+ <div id="skills">
+  <span class="skill">HTML</span>
+  <span class="skill">CSS</span>
+  <span class="skill">JavaScript</span>
+  <span class="skill">jQuery</span>
+ </div>
+
+ <p style="font-size:12px;color:#aaa">
+  Arahkan kursor ke skill
+ </p>
+
+ <div class="row">
+  <button id="gantiNama">Ganti Nama</button>
+  <button id="tambahSkill">Tambah Skill</button>
+ </div>
+
+ <div class="row">
+  <button id="efek">✨ Efek</button>
+  <button id="reset" class="outline">Reset</button>
+ </div>
+
+ <button id="ubahProfil" style="width:100%;margin-top:10px">
+  Ubah Profil
+ </button>
+
+ <div id="editBox" class="box">
+
+  <label>Nama Baru</label>
+  <input id="namaBaru" placeholder="Masukkan nama baru">
+
+  <label>Jabatan Baru</label>
+  <input id="jabatanBaru" placeholder="Masukkan jabatan baru">
+
+  <button id="simpanProfil" style="width:100%;margin-top:10px">
+   Simpan Perubahan
+  </button>
+
+ </div>
+
+</div>
+</div>
+
+
+<div id="belanja">
+<div class="card">
+
+ <h1>🛍️ Pinky Shop</h1>
+
+ <p style="color:#a66a7d">
+  Belanja kebutuhan favoritmu 💗
+ </p>
+
+ <div class="produk">
+
+  <div class="item">
+   <div class="gambar">🎀</div>
+   <h3>Ribbon Bag</h3>
+   <p class="harga">Rp 75.000</p>
+   <button class="beli" data-n="Ribbon Bag" data-h="75000">
+    Tambah
+   </button>
+  </div>
+
+  <div class="item">
+   <div class="gambar">👜</div>
+   <h3>Mini Bag</h3>
+   <p class="harga">Rp 120.000</p>
+   <button class="beli" data-n="Mini Bag" data-h="120000">
+    Tambah
+   </button>
+  </div>
+
+  <div class="item">
+   <div class="gambar">👛</div>
+   <h3>Soft Pouch</h3>
+   <p class="harga">Rp 55.000</p>
+   <button class="beli" data-n="Soft Pouch" data-h="55000">
+    Tambah
+   </button>
+  </div>
+
+  <div class="item">
+   <div class="gambar">🎁</div>
+   <h3>Gift Box</h3>
+   <p class="harga">Rp 150.000</p>
+   <button class="beli" data-n="Gift Box" data-h="150000">
+    Tambah
+   </button>
+  </div>
+
+ </div>
+
+
+ <div class="keranjang">
+
+  <h2>🛒 Keranjang</h2>
+
+  <div id="cart">
+   <p style="text-align:center;color:#aaa">
+    Keranjang masih kosong
+   </p>
+  </div>
+
+  <hr>
+
+  <p>Total Belanja: <b id="sub">Rp 0</b></p>
+
+  <p id="diskon">Diskon: Rp 0</p>
+
+  <h3 class="total">
+   Total Bayar: <span id="total">Rp 0</span>
+  </h3>
+
+ </div>
+
+
+ <div class="form-box">
+
+  <h2>📝 Data Pembeli</h2>
+
+  <form id="checkout">
+
+   <label>Nama</label>
+   <input id="nama" placeholder="Masukkan nama">
+   <p class="error" id="eNama">
+    Nama minimal 3 karakter!
+   </p>
+
+   <label>Alamat</label>
+   <textarea id="alamat" placeholder="Masukkan alamat"></textarea>
+   <p class="error" id="eAlamat">
+    Alamat wajib diisi!
+   </p>
+
+   <label>No. HP</label>
+   <input id="hp" placeholder="08123456789">
+   <p class="error" id="eHp">
+    No. HP harus 10-13 angka!
+   </p>
+
+   <button class="checkout">Checkout</button>
+
+  </form>
+ </div>
+
+
+ <div id="berhasil">
+  ✓ Pesanan berhasil dibuat!
+ </div>
+
+
+ <div class="riwayat">
+
+  <h2>📋 Riwayat Belanja</h2>
+
+  <div id="riwayat">
+   <p style="text-align:center;color:#aaa">
+    Belum ada riwayat belanja.
+   </p>
+  </div>
+
+ </div>
+
+</div>
+</div>
+
+</div>
+
+
+<script>
+
+$(function(){
+
+
+$("#btnProfil").click(function(){
+ $("#belanja").fadeOut(200,function(){
+  $("#profil").fadeIn(400);
+ });
+});
+
+$("#btnBelanja").click(function(){
+ $("#profil").fadeOut(200,function(){
+  $("#belanja").fadeIn(400);
+ });
+});
+
+
+
+$("#gantiNama").click(function(){
+
+ let n=prompt("Masukkan nama baru:");
+
+ if(n && n.length>=3)
+  $("#namaProfil").fadeOut(200,function(){
+   $(this).text(n).fadeIn(400);
+  });
+ else if(n) alert("Nama minimal 3 karakter!");
+
+});
+
+
+$("#tambahSkill").click(function(){
+
+ let s=prompt("Masukkan skill baru:");
+
+ if(s)
+  $("<span>")
+   .addClass("skill")
+   .text(s)
+   .hide()
+   .appendTo("#skills")
+   .fadeIn(400);
+
+});
+
+
+$("#efek").click(function(){
+ $("#namaProfil").fadeOut(200).fadeIn(500);
+ $("#skills").slideUp(200).slideDown(500);
+});
+
+
+$("#reset").click(function(){
+
+ $("#namaProfil").text("Khalindra Maulita");
+ $("#jabatanProfil").text("Mahasiswi Sistem Informasi");
+
+ $("#skills").html(`
+  <span class="skill">HTML</span>
+  <span class="skill">CSS</span>
+  <span class="skill">JavaScript</span>
+  <span class="skill">jQuery</span>
+ `);
+
+});
+
+
+$("#ubahProfil").click(function(){
+ $("#editBox").slideToggle(400);
+});
+
+
+$("#simpanProfil").click(function(){
+
+ let n=$("#namaBaru").val().trim();
+ let j=$("#jabatanBaru").val().trim();
+
+ if(n.length<3){
+  alert("Nama minimal 3 karakter!");
+  return;
+ }
+
+ if(j.length<3){
+  alert("Jabatan harus diisi!");
+  return;
+ }
+
+ $("#namaProfil").text(n);
+ $("#jabatanProfil").text(j);
+
+ $("#namaBaru,#jabatanBaru").val("");
+
+});
+
+
+let cart=[];
+
+$(".beli").click(function(){
+
+ let n=$(this).data("n");
+ let h=Number($(this).data("h"));
+ let x=cart.find(i=>i.n==n);
+
+ x ? x.q++ : cart.push({n:n,h:h,q:1});
+
+ tampil();
+
+});
+
+
+function tampil(){
+
+ let html="",sum=0;
+
+ cart.forEach((i,x)=>{
+
+  let jumlah=i.h*i.q;
+  sum+=jumlah;
+
+  html+=`
+   <div class="cart-item">
+    ${i.n} (${i.q}x)
+    <span>
+     Rp ${jumlah.toLocaleString("id-ID")}
+     <button onclick="hapus(${x})">×</button>
+    </span>
+   </div>
+  `;
+
+ });
+
+ $("#cart").html(html ||
+  '<p style="text-align:center;color:#aaa">Keranjang masih kosong</p>'
+ );
+
+ let d=sum>100000 ? sum*.1 : 0;
+
+ $("#sub").text("Rp "+sum.toLocaleString("id-ID"));
+ $("#diskon").text("Diskon: Rp "+d.toLocaleString("id-ID"));
+ $("#total").text("Rp "+(sum-d).toLocaleString("id-ID"));
+
+}
+
+window.hapus=function(x){
+ cart.splice(x,1);
+ tampil();
+};
+
+
+$("#checkout").submit(function(e){
+
+ e.preventDefault();
+
+ let n=$("#nama").val().trim();
+ let a=$("#alamat").val().trim();
+ let h=$("#hp").val().trim();
+ let ok=true;
+
+ if(n.length<3){
+  $("#eNama").slideDown();ok=false;
+ }else $("#eNama").slideUp();
+
+ if(a.length<5){
+  $("#eAlamat").slideDown();ok=false;
+ }else $("#eAlamat").slideUp();
+
+ if(!/^[0-9]{10,13}$/.test(h)){
+  $("#eHp").slideDown();ok=false;
+ }else $("#eHp").slideUp();
+
+ if(!cart.length){
+  alert("Keranjang masih kosong!");
+  ok=false;
+ }
+
+ if(ok){
+
+  let data=JSON.parse(localStorage.riwayat||"[]");
+
+  data.push({
+   tanggal:new Date().toLocaleString("id-ID"),
+   total:$("#total").text(),
+   qty:cart.reduce((s,i)=>s+i.q,0)
+  });
+
+  localStorage.riwayat=JSON.stringify(data);
+
+  $("#berhasil").fadeIn().delay(1500).fadeOut();
+
+  this.reset();
+  cart=[];
+  tampil();
+  loadHistory();
+
+ }
+
+});
+
+
+function loadHistory(){
+
+ let data=JSON.parse(localStorage.riwayat||"");
+ let html="";
+
+ if(data)
+  data.forEach(i=>{
+   html+=`
+    <div class="cart-item">
+     ${i.tanggal}
+     <span>${i.total}</span>
+    </div>
+   `;
+  });
+
+ $("#riwayat").html(html ||
+  '<p style="text-align:center;color:#aaa">Belum ada riwayat belanja.</p>'
+ );
+
+}
+
+loadHistory();
+
+});
+</script>
+
+</body>
+</html>
