@@ -1,0 +1,892 @@
+/* ============================================================
+   WARUNG ICE CREAM - CSS
+   Diadaptasi untuk Seafood Nusantara
+   ============================================================ */
+
+:root {
+    --primary: #ff6b9d;
+    --primary-dark: #e84a7f;
+    --secondary: #ffd93d;
+    --accent: #6bcbff;
+    --dark: #2d1b3d;
+    --light: #fff5f8;
+    --gradient: linear-gradient(135deg, #ff6b9d 0%, #ffd93d 100%);
+    --shadow-sm: 0 2px 8px rgba(45, 27, 61, 0.08);
+    --shadow-md: 0 5px 20px rgba(45, 27, 61, 0.12);
+    --shadow-lg: 0 10px 40px rgba(45, 27, 61, 0.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+}
+
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+    background: var(--primary-dark);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo i {
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 15px;
+    background: white;
+    color: var(--primary-dark);
+    border-radius: 20px;
+    position: relative;
+}
+
+.cart-badge {
+    background: var(--secondary);
+    color: var(--dark);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+    background: var(--gradient);
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: white;
+}
+
+.hero p {
+    margin-bottom: 25px;
+}
+
+.search-box {
+    max-width: 550px;
+    margin: auto;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-dark);
+}
+
+
+/* ============================================================
+   PRODUK
+   ============================================================ */
+
+.produk-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.5rem;
+}
+
+.filter-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-btn {
+    border: none;
+    background: white;
+    color: var(--dark);
+    padding: 9px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* ============================================================
+   PRODUK GRID
+   ============================================================ */
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.produk-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: 0.3s;
+}
+
+.produk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.produk-img {
+    height: 180px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5rem;
+    position: relative;
+}
+
+.produk-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--secondary);
+    color: var(--dark);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.produk-badge.hot {
+    background: #ff6b6b;
+    color: white;
+}
+
+.produk-info {
+    padding: 18px;
+}
+
+.produk-info h3 {
+    font-size: 1rem;
+    margin-bottom: 7px;
+}
+
+.produk-info .desc {
+    color: #777;
+    font-size: 0.8rem;
+    min-height: 38px;
+}
+
+.produk-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.produk-price {
+    color: var(--primary-dark);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.btn-add-cart {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add-cart:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+
+/* ============================================================
+   CART
+   ============================================================ */
+
+.cart-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+}
+
+.cart-sidebar {
+    position: fixed;
+    right: -450px;
+    top: 0;
+    width: 420px;
+    max-width: 90%;
+    height: 100vh;
+    background: white;
+    z-index: 2000;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    background: var(--primary-dark);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-img {
+    width: 60px;
+    height: 60px;
+    background: var(--light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    font-size: 0.9rem;
+}
+
+.cart-item-price {
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.qty-btn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: var(--light);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item {
+    border: none;
+    background: transparent;
+    color: #ff6b6b;
+    cursor: pointer;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.total-price {
+    color: var(--primary-dark);
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--gradient);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--dark);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 3000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.footer strong {
+    color: var(--secondary);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 992px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--primary-dark);
+        flex-direction: column;
+        padding: 15px;
+        gap: 5px;
+        box-shadow: var(--shadow-md);
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .cart-text {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .filter-btns {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .produk-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .produk-img {
+        height: 130px;
+        font-size: 3.5rem;
+    }
+
+    .produk-info {
+        padding: 15px;
+    }
+
+    .produk-info h3 {
+        font-size: 0.95rem;
+    }
+
+    .produk-price {
+        font-size: 1rem;
+    }
+
+    .btn-add-cart {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .toast {
+        font-size: 0.82rem;
+        padding: 12px 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .produk-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .produk-img {
+        height: 110px;
+        font-size: 3rem;
+    }
+
+    .produk-info {
+        padding: 12px;
+    }
+
+    .produk-info h3 {
+        font-size: 0.85rem;
+    }
+
+    .produk-info .desc {
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+
+    .produk-price {
+        font-size: 0.9rem;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.78rem;
+    }
+}
+
+/* ============================================================
+   TAMBAHAN CHECKOUT & DISKON
+   ============================================================ */
+
+.harga-lama {
+    display: block;
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+}
+
+.diskon-info {
+    display: inline-block;
+    background: #55c98a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+
+/* ============================================================
+   DATA PEMBELI
+   ============================================================ */
+
+.checkout-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 2000;
+}
+
+.checkout-modal.show {
+    display: flex;
+}
+
+
+.checkout-box {
+    width: 520px;
+    max-width: 100%;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+.checkout-box h2 {
+    color: #e84a7f;
+
+    margin-bottom: 25px;
+}
+
+
+.checkout-box h2 i {
+    margin-right: 8px;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+
+    color: #2d1b3d;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 2px solid #eee;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 0.9rem;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff6b9d;
+}
+
+
+.form-group textarea {
+    height: 100px;
+
+    resize: none;
+}
+
+
+.checkout-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.btn-batal,
+.btn-bayar {
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 600;
+}
+
+
+.btn-batal {
+    background: white;
+
+    color: #e84a7f;
+
+    border: 2px solid #e84a7f;
+}
+
+
+.btn-bayar {
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b9d,
+            #ffd93d
+        );
+}
+
+
+.btn-bayar i {
+    margin-right: 5px;
+}
+
+
+@media (max-width: 500px) {
+
+    .checkout-box {
+        padding: 20px;
+    }
+
+
+    .checkout-buttons {
+        flex-direction: column;
+    }
+
+
+    .btn-batal,
+    .btn-bayar {
+        width: 100%;
+    }
+
+}
+/* KERANJANG */
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+
+    width: 420px;
+    max-width: 90%;
+
+    height: 100vh;
+
+    background: #fff;
+
+    z-index: 1001;
+
+    transition: right 0.3s ease;
+
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* INI YANG MEMBUAT KERANJANG MASUK */
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+
+/* LAYAR GELAP */
+
+.cart-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 1000;
+
+    display: none;
+}
