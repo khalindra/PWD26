@@ -1,0 +1,116 @@
+
+/* Pengaturan dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, #f9a8d4 0%, #c4b5fd 100%);
+    color: #ffffff;
+    padding: 80px 0;
+}
+
+/* Foto profil */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+/* Tombol utama */
+.btn-primary {
+    background-color: #db2777;
+    border-color: #db2777;
+}
+
+.btn-primary:hover {
+    background-color: #be185d;
+    border-color: #be185d;
+}
+
+/* Card skill */
+.skill-card {
+    border: none;
+    border-top: 4px solid #d9468f;
+    border-radius: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(217, 70, 143, 0.18);
+}
+
+/* Ikon skill */
+.skill-card .icon {
+    font-size: 3rem;
+    color: #d9468f;
+    margin-bottom: 15px;
+}
+
+/* Warna progress bar */
+.skill-html {
+    background-color: #f472b6;
+}
+
+.skill-css {
+    background-color: #a78bfa;
+}
+
+.skill-js {
+    background-color: #ec4899;
+}
+
+/* Pendidikan */
+.education-section {
+    background-color: #fff5fa;
+}
+
+.education-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(100, 40, 80, 0.08);
+}
+
+.education-icon {
+    font-size: 2.5rem;
+    color: #d9468f;
+}
+
+/* Footer */
+.footer {
+    background: #352638;
+    color: white;
+    padding: 25px 0;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #f9a8d4 !important;
+}
+
+/* Tampilan HP */
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 55px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .profile-img {
+        width: 145px;
+        height: 145px;
+    }
+}

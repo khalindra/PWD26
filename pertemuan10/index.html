@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Bloom - Skincare Ritual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#beranda" class="logo">
+                <span class="logo-leaf">❧</span>
+                <span>
+                    <strong>Glow & Bloom</strong>
+                    <small>Skincare Ritual</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle"
+                    aria-label="Buka menu" aria-expanded="false">☰</button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a class="nav-link active" href="#beranda">Beranda</a></li>
+                <li><a class="nav-link" href="#tentang">Tentang</a></li>
+                <li><a class="nav-link" href="#rutinitas">Jadwal</a></li>
+                <li><a class="nav-link" href="#manfaat">Manfaat</a></li>
+                <li><a class="nav-link" href="#produk">Produk</a></li>
+                <li><a class="nav-link" href="#daftar">Daftar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- BERANDA -->
+        <section class="hero" id="beranda">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <p class="eyebrow">KULIT SEHAT, PERCAYA DIRI</p>
+                    <h1>Rawat Kulitmu,<br>Raih Versi Terbaikmu</h1>
+                    <p>
+                        Temukan rangkaian skincare yang dirancang untuk
+                        membantu menjaga kesehatan kulitmu setiap hari.
+                    </p>
+                    <a href="#daftar" class="btn btn-pink">
+                        Daftar Sekarang <span>→</span>
+                    </a>
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85"
+                        alt="Rangkaian produk skincare">
+                </div>
+            </div>
+        </section>
+
+        <!-- TENTANG -->
+        <section class="about-section container section-anchor" id="tentang">
+            <p class="eyebrow">TENTANG GLOW & BLOOM</p>
+            <h2>Rawat Kulit dengan Cara Sederhana</h2>
+            <p>
+                Glow & Bloom adalah konsep website skincare yang membantu
+                pengunjung mengenal produk perawatan kulit dan rutinitas
+                sederhana sesuai kebutuhan kulit.
+            </p>
+        </section>
+
+        <!-- JADWAL DAN TAB -->
+        <section class="routine-section container section-anchor" id="rutinitas">
+            <div class="section-heading">
+                <h2>Mulai dari Hal Sederhana</h2>
+                <p>Perawatan kecil, hasil besar untuk kulitmu.</p>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Jadwal skincare">
+                <button class="tab active" data-tab="pagi"
+                        role="tab" aria-selected="true">
+                    <span>☼</span> Pagi
+                </button>
+                <button class="tab" data-tab="siang"
+                        role="tab" aria-selected="false">
+                    <span>☁</span> Siang
+                </button>
+                <button class="tab" data-tab="malam"
+                        role="tab" aria-selected="false">
+                    <span>☾</span> Malam
+                </button>
+            </div>
+
+            <div class="routine-card">
+                <div class="routine-symbol" id="routine-symbol">☼</div>
+                <div class="routine-copy">
+                    <h3 id="routine-title">01 / Pagi</h3>
+                    <p id="routine-description">
+                        Bersihkan wajah, gunakan pelembap, dan akhiri
+                        dengan sunscreen.
+                    </p>
+                </div>
+                <img
+                    src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=500&q=80"
+                    alt="Produk perawatan kulit">
+            </div>
+        </section>
+
+        <!-- PRODUK -->
+        <section class="products-section container section-anchor" id="produk">
+            <div class="section-title">
+                <p class="eyebrow">PILIHAN UNTUKMU</p>
+                <h2>Produk Pilihan</h2>
+                <p>Kenali produk skincare untuk rutinitas harianmu.</p>
+            </div>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=500&q=85"
+                        alt="Brightening Serum">
+                    <div class="product-info">
+                        <h3>Brightening Serum</h3>
+                        <p class="price">Rp 149.000</p>
+                        <a href="#daftar" class="btn btn-small">Lihat Detail</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=500&q=85"
+                        alt="Moisturizing Cream">
+                    <div class="product-info">
+                        <h3>Moisturizing Cream</h3>
+                        <p class="price">Rp 129.000</p>
+                        <a href="#daftar" class="btn btn-small">Lihat Detail</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=85"
+                        alt="Sunscreen SPF 50">
+                    <div class="product-info">
+                        <h3>Sunscreen SPF 50</h3>
+                        <p class="price">Rp 99.000</p>
+                        <a href="#daftar" class="btn btn-small">Lihat Detail</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- MANFAAT -->
+        <section class="benefits-section section-anchor" id="manfaat">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Kenapa Memilih Glow & Bloom?</h2>
+                    <p>Hal sederhana yang mendukung rutinitas perawatan kulit.</p>
+                </div>
+
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <span>♧</span>
+                        <h3>Perawatan Praktis</h3>
+                        <p>Mudah dimasukkan ke rutinitas sehari-hari.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span>♡</span>
+                        <h3>Sesuai Kebutuhan</h3>
+                        <p>Pilih perawatan berdasarkan jenis kulitmu.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span>✧</span>
+                        <h3>Beragam Produk</h3>
+                        <p>Kenali pilihan produk dalam satu halaman.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span>❀</span>
+                        <h3>Rutinitas Teratur</h3>
+                        <p>Kenali tahapan perawatan pagi, siang, dan malam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM PENDAFTARAN -->
+        <section class="registration-section container section-anchor" id="daftar">
+            <div class="form-card">
+                <p class="eyebrow">GABUNG BERSAMA KAMI</p>
+                <h2>Daftar Sekarang</h2>
+                <p class="form-subtitle">
+                    Isi formulir berikut untuk bergabung dengan Glow & Bloom.
+                </p>
+
+                <form id="register-form" novalidate>
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama"
+                               placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="contoh@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">Nomor HP *</label>
+                        <input type="tel" id="telepon" name="telepon"
+                               placeholder="08xxxxxxxxxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usia">Usia *</label>
+                        <input type="number" id="usia" name="usia"
+                               placeholder="Masukkan usia" min="17">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenis-kulit">Jenis Kulit *</label>
+                        <select id="jenis-kulit" name="jenis_kulit">
+                            <option value="">Pilih jenis kulit</option>
+                            <option value="normal">Normal</option>
+                            <option value="kering">Kering</option>
+                            <option value="berminyak">Berminyak</option>
+                            <option value="kombinasi">Kombinasi</option>
+                            <option value="sensitif">Sensitif</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <div class="password-wrap">
+                            <input type="password" id="password" name="password"
+                                   placeholder="Minimal 8 karakter">
+                            <button type="button" class="toggle-password"
+                                    data-target="password"
+                                    aria-label="Tampilkan password">◉</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="konfirmasi">Konfirmasi Password *</label>
+                        <div class="password-wrap">
+                            <input type="password" id="konfirmasi"
+                                   name="konfirmasi"
+                                   placeholder="Ulangi password">
+                            <button type="button" class="toggle-password"
+                                    data-target="konfirmasi"
+                                    aria-label="Tampilkan konfirmasi password">◉</button>
+                        </div>
+                    </div>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="persetujuan" id="persetujuan">
+                        Saya menyetujui ketentuan pendaftaran.
+                    </label>
+
+                    <button type="submit" class="btn btn-submit">Daftar</button>
+                    <div id="form-message" class="form-message" role="status"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- KEMBALI KE ATAS -->
+    <button id="back-to-top" aria-label="Kembali ke atas">↑</button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#beranda" class="footer-logo">
+                <strong>Glow & Bloom</strong>
+                <small>Skincare Ritual</small>
+            </a>
+
+            <div class="footer-links">
+                <a href="#beranda">Beranda</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#rutinitas">Jadwal</a>
+                <a href="#manfaat">Manfaat</a>
+                <a href="#produk">Produk</a>
+                <a href="#daftar">Daftar</a>
+            </div>
+
+            <p class="copyright">© 2026 Glow & Bloom</p>
+        </div>
+    </footer>
+
+    <!-- jQuery dan jQuery Validation Plugin -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
