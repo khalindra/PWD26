@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNews ID - Berita Karhutla</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #f472b6 !important;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #20212a, #693c36);
+            color: white;
+            padding: 60px 25px;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            border-left: 5px solid #f472b6;
+            padding-left: 12px;
+            font-weight: bold;
+        }
+
+        .category {
+            color: #e85d75;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .news-card {
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .trending-item {
+            border-bottom: 1px solid #ddd;
+            padding: 14px 0;
+        }
+
+        .trending-number {
+            color: #e85d75;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechNews ID</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#utama">Berita Utama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trending">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#terbaru">Berita Terbaru</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+
+        <!-- HEADLINE UTAMA / HERO -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <section class="hero">
+                    <span class="badge bg-danger mb-3">
+                        BERITA LINGKUNGAN
+                    </span>
+
+                    <h1 class="fw-bold">
+                        Waspada Karhutla, Lindungi Hutan dan Kualitas Udara
+                    </h1>
+
+                    <p class="lead mt-3">
+                        Kebakaran hutan dan lahan mengancam lingkungan,
+                        kesehatan masyarakat, serta kelestarian satwa.
+                        Pencegahan sejak dini menjadi tanggung jawab bersama.
+                    </p>
+
+                    <a href="#utama" class="btn btn-light mt-2">
+                        Baca Berita
+                    </a>
+                </section>
+            </div>
+        </div>
+
+        <!-- BERITA UTAMA DAN SIDEBAR -->
+        <div class="row g-4 mb-5">
+
+            <!-- BERITA UTAMA: 8 KOLOM -->
+            <div class="col-12 col-lg-8" id="utama">
+                <h3 class="section-title mb-3">Berita Utama</h3>
+
+                <div class="card shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80"
+                        class="card-img-top" alt="Kawasan hutan">
+
+                    <div class="card-body">
+                        <span class="category">LINGKUNGAN</span>
+
+                        <h4 class="card-title mt-2">
+                            Karhutla Menjadi Ancaman bagi Lingkungan
+                            dan Kesehatan Masyarakat
+                        </h4>
+
+                        <p class="text-secondary small">
+                            27 Oktober 2026 | Redaksi TechNews ID
+                        </p>
+
+                        <p class="card-text">
+                            Kebakaran hutan dan lahan atau karhutla
+                            merupakan permasalahan lingkungan yang
+                            perlu mendapat perhatian serius, termasuk
+                            di wilayah Kalimantan.
+                        </p>
+
+                        <p class="card-text">
+                            Kebakaran dapat merusak kawasan hutan,
+                            mengganggu kehidupan satwa, serta menghasilkan
+                            asap yang menurunkan kualitas udara.
+                            Kondisi cuaca kering juga dapat meningkatkan
+                            risiko penyebaran api.
+                        </p>
+
+                        <p class="card-text">
+                            Masyarakat diimbau tidak membuka lahan
+                            dengan cara membakar, tidak membuang puntung
+                            rokok sembarangan, dan segera melaporkan
+                            apabila menemukan titik api.
+                        </p>
+
+                        <p class="card-text">
+                            Kerja sama masyarakat dan petugas sangat
+                            diperlukan untuk mencegah kebakaran meluas
+                            serta menjaga kelestarian lingkungan.
+                        </p>
+
+                        <div class="alert alert-light border mb-0">
+                            <small>
+                                Catatan: Artikel ini merupakan berita
+                                edukatif, bukan laporan kejadian terkini
+                                yang telah diverifikasi.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIDEBAR TRENDING: 4 KOLOM -->
+            <div class="col-12 col-lg-4" id="trending">
+                <h3 class="section-title mb-3">Trending</h3>
+
+                <div class="card shadow-sm">
+                    <div class="card-body">
+
+                        <div class="trending-item d-flex gap-3">
+                            <span class="trending-number">01</span>
+                            <div>
+                                <span class="category">KESEHATAN</span>
+                                <h6 class="fw-bold">
+                                    Bahaya Asap Karhutla bagi Kesehatan
+                                </h6>
+                                <small class="text-secondary">
+                                    Dampak asap terhadap pernapasan.
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="trending-item d-flex gap-3">
+                            <span class="trending-number">02</span>
+                            <div>
+                                <span class="category">LINGKUNGAN</span>
+                                <h6 class="fw-bold">
+                                    Lahan Gambut Rentan Terbakar
+                                </h6>
+                                <small class="text-secondary">
+                                    Pentingnya menjaga lahan gambut.
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="trending-item d-flex gap-3">
+                            <span class="trending-number">03</span>
+                            <div>
+                                <span class="category">PENCEGAHAN</span>
+                                <h6 class="fw-bold">
+                                    Cara Mencegah Kebakaran Hutan
+                                </h6>
+                                <small class="text-secondary">
+                                    Langkah pencegahan sejak dini.
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="trending-item d-flex gap-3 border-0">
+                            <span class="trending-number">04</span>
+                            <div>
+                                <span class="category">KALIMANTAN</span>
+                                <h6 class="fw-bold">
+                                    Pentingnya Menjaga Hutan Kalimantan
+                                </h6>
+                                <small class="text-secondary">
+                                    Melindungi hutan dan satwa.
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BERITA TERBARU -->
+        <section id="terbaru">
+            <h3 class="section-title mb-4">Berita Terbaru</h3>
+
+            <div class="row g-4">
+
+                <!-- KARTU 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card news-card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Pepohonan di kawasan hutan">
+
+                        <div class="card-body">
+                            <span class="category">LINGKUNGAN</span>
+                            <h5 class="card-title mt-2">
+                                Dampak Karhutla terhadap Hutan
+                            </h5>
+                            <p class="card-text small">
+                                Kebakaran dapat merusak habitat satwa
+                                dan mengurangi kelestarian hutan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card news-card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Pemandangan alam">
+
+                        <div class="card-body">
+                            <span class="category">PENCEGAHAN</span>
+                            <h5 class="card-title mt-2">
+                                Cegah Karhutla dari Lingkungan Sekitar
+                            </h5>
+                            <p class="card-text small">
+                                Tidak membakar lahan merupakan salah
+                                satu langkah penting mencegah karhutla.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card news-card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Satwa liar di alam">
+
+                        <div class="card-body">
+                            <span class="category">SATWA LIAR</span>
+                            <h5 class="card-title mt-2">
+                                Satwa Liar Terancam akibat Kebakaran
+                            </h5>
+                            <p class="card-text small">
+                                Kerusakan hutan dapat menghilangkan
+                                tempat tinggal dan sumber makanan satwa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KARTU 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card news-card shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Hutan hijau yang perlu dilestarikan">
+
+                        <div class="card-body">
+                            <span class="category">KALIMANTAN</span>
+                            <h5 class="card-title mt-2">
+                                Bersama Menjaga Kelestarian Hutan
+                            </h5>
+                            <p class="card-text small">
+                                Kepedulian masyarakat membantu menjaga
+                                hutan untuk generasi mendatang.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h5 class="fw-bold">TechNews ID</h5>
+
+            <p class="mb-2">
+                Informasi lingkungan, karhutla, dan pelestarian hutan.
+            </p>
+
+            <p class="text-white-50 small mb-0">
+                &copy; 2026 TechNews ID. Semua hak dilindungi.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
